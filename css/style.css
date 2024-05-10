@@ -10,6 +10,21 @@ html, body, [class*="st-"] {
     font-family: 'GmarketSansMedium', sans-serif !important;
 }
 
+/* color: rgba(49, 51, 63, 0.6) ; */
+h1[id="3dacbfe0"] {
+    color: rgba(49, 51, 63, 0.8) ;
+}
+/* .st-emotion-cache-10trblm.e1nzilvr1{
+    background-image: linear-gradient(to right, blue, skyblue);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+} */
+h1[id="920bee69"] {
+    color: rgba(49, 51, 63, 0.8) ;
+    margin-top: -30px;
+}
+
 /* 버튼 */
 .row-widget.stButton button {
     border-radius: 5px;
@@ -52,6 +67,3 @@ html, body, [class*="st-"] {
     border-radius: 5px; 
     width: 545px;
 }
-
-
-/* st-emotion-cache-bho8sy eeusbqq1 */
