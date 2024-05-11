@@ -74,19 +74,20 @@ def send_to_dialogflow(prompt, AGENT_ID):
     
     # Extract the response message correctly
     parameters = response.query_result.parameters
-    if(AGENT_ID == 'ffbbfee0-8915-49f8-a4c2-702b119b2684'):
-        # if(response.query_result.parameters != None):
-        #     return response.query_result.parameters.response_messages[0].text.text[0]
-        # else:
-            return response.query_result.response_messages[0].text.text[0]
-        
+
+    if parameters == None:
+        return response.query_result.response_messages[0].text.text[0]
+    elif(parameters.get("$request.generative.DynamicFAQResponse") != None):
+        return parameters.get("$request.generative.DynamicFAQResponse")
     else:
-        if parameters == None:
-            return response.query_result.response_messages[0].text.text[0]
-        elif(parameters.get("$request.generative.DynamicFAQResponse") != None):
-            return parameters.get("$request.generative.DynamicFAQResponse")
-        else:
-            return response.query_result.response_messages[0].text.text[0]
+        return response.query_result.response_messages[0].text.text[0]
+    
+    # if(AGENT_ID == 'ffbbfee0-8915-49f8-a4c2-702b119b2684'):
+    #     # if(response.query_result.parameters != None):
+    #     #     return response.query_result.parameters.response_messages[0].text.text[0]
+    #     # else:
+    #         return response.query_result.response_messages[0].text.text[0]
+        
                 
 if prompt:
     if not AGENT_ID:
